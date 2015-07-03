@@ -1,0 +1,182 @@
+{% extends 'layout.html' %}
+
+{% block head %}<h2>CSS | Forms</h2>{% endblock %}
+
+{% block content %}
+
+<section>
+    <h3>Text input</h3>
+
+    <div class="example-inline">
+        <div class="example">
+            <input type="text">
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <input type="text" class="valid">
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <input type="text" class="invalid">
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>Placeholders, labels and hints</h3>
+
+    <div class="example-inline">
+        <div class="example">
+            <label>Name</label>
+            <input type="text" placeholder="Enter text here">
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <label class="valid">Name</label>
+            <input type="text" class="valid" placeholder="Enter text here">
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <div class="invalid">
+                <label>Name</label>
+                <input type="text" class="invalid" placeholder="Enter text here">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>Semantic inputs</h3>
+
+    <div class="example-inline">
+        <div class="example">
+            <input type="email" placeholder="bart@simpson.net">
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <input type="password" placeholder="Password">
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <input type="url" placeholder="http://">
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <input type="number" placeholder="0">
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>Textarea</h3>
+
+    <div class="example-inline">
+        <div class="example">
+            <textarea placeholder="Textarea" ></textarea>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <textarea class="valid" placeholder="Textarea"></textarea>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <textarea class="invalid" placeholder="Textarea"></textarea>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>Full-width</h3>
+
+    <div class="example">
+<input type="text" class="wide">
+<select class="wide">
+    <option>HTML</option>
+    <option>CSS</option>
+</select>
+<textarea class="wide"></textarea>
+    </div>
+</section>
+
+<section>
+    <h3>Checkbox</h3>
+
+    <div class="example">
+<label>
+    <input type="checkbox" name="check_one">Option one
+</label>
+<label>
+    <input type="checkbox" name="check_two">Option two
+</label>
+    </div>
+</section>
+
+<section>
+    <h3>Radiobutton</h3>
+
+    <div class="example">
+<label>
+    <input type="radio" name="radio">Option one
+</label>
+<label>
+    <input type="radio" name="radio">Option two
+</label>
+    </div>
+</section>
+
+<section>
+    <h3>Fieldset</h3>
+
+    <div class="example">
+<fieldset>
+    <legend>User details</legend>
+    <label>
+        Name<br>
+        <input type="text" name="user_name">
+    </label>
+    <br>
+    <label>
+        Email<br>
+        <input type="text" name="user_email">
+    </label>
+</fieldset>
+    </div>
+</section>
+
+<section>
+    <h3>Customizing inputs</h3>
+
+    <p>Here is default values for forms module:</p>
+
+<pre><code class="hljs scss">$ae-input-color-normal:  #b7b7b7 !default;
+$ae-input-color-valid:   #6dab5e !default;
+$ae-input-color-invalid: #db4f4f !default;
+</code></pre>
+
+    <p>
+        Input module have a mixin for colorizing:
+    </p>
+<pre><code class="hljs scss">input[type="text"] .mycolor {
+  @include input-style(#f200ff);
+}</code></pre>
+</section>
+
+{% endblock %}

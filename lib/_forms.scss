@@ -1,0 +1,94 @@
+$ae-input-color-normal:  #b7b7b7 !default;
+$ae-input-color-valid:   $ae-color-success !default;
+$ae-input-color-invalid: $ae-color-danger !default;
+
+@mixin input-style($color) {
+  border-color: $color;
+
+  color: darken($color, 30%);
+
+  &::placeholder {
+    color: lighten($color, 15%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($color, 0.3);
+  }
+
+  &:hover {
+    background-color: rgba($color, 0.05);
+  }
+}
+
+input {
+  &[type="text"], &[type="password"], &[type="email"], &[type="url"], &[type="month"], &[type="number"], &[type="search"], &[type="tel"], &[type="week"] {
+    padding: 4px 6px;
+
+    border: 2px solid;
+    border-radius: 3px;
+
+    &::placeholder {
+      font-weight: normal;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    &:focus {
+      outline: none;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+
+    @include input-style($ae-input-color-normal);
+
+    &.valid, .valid & {
+      @include input-style($ae-input-color-valid);
+    }
+
+    &.invalid, .invalid & {
+      @include input-style($ae-input-color-invalid);
+    }
+  }
+
+  &[type="checkbox"], &[type="radio"] {
+    margin-right: 1ex;
+  }
+}
+
+textarea {
+  @extend input[type="text"];
+
+  resize: vertical;
+}
+
+label {
+  color: #454f54;
+
+  .valid &, &.valid {
+    color: darken($ae-input-color-valid, 20%);
+  }
+
+  .invalid &, &.invalid {
+    color: darken($ae-input-color-invalid, 20%);
+  }
+}
+
+fieldset {
+  margin: 0 0 1em 0;
+
+  border: 1px solid darken(#e6e9eb, 5%);
+  border-radius: 4px;
+
+  legend {
+    padding: 1px 4px;
+    margin-left: -4px;
+    color: lighten(#58676e, 5%);
+  }
+}
+
+input, textarea, select {
+  &.wide, .wide & {
+    width: 100%;
+  }
+}

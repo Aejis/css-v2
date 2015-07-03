@@ -1,0 +1,93 @@
+{% extends 'layout.html' %}
+
+{% block head %}<h2>CSS | Notifications</h2>{% endblock %}
+
+{% block content %}
+
+<section>
+    <h3>Alerts</h3>
+
+    <div class="example-inline">
+        <div class="example">
+            <div class="flash">Holy crap! Something happened!</div>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <div class="flash notice">Holy crap! Something happened!</div>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <div class="flash success">Holy crap! Something happened!</div>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <div class="flash alert">Holy crap! Something happened!</div>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <div class="flash warning">Holy crap! Something happened!</div>
+        </div>
+    </div>
+
+    <p>
+        Also, some aliases are available:
+        <ul>
+            <li><code>alert</code> == <code>error</code></li>
+            <li><code>warning</code> == <code>highlight</code></li>
+        </ul>
+    </p>
+</section>
+
+<section>
+    <h3>Alerts with close button</h3>
+
+    <div class="example"><div class="flash success">
+    Holy crap! Something happened!
+    <button class="close" data-dismiss="alert">&times;</button>
+</div>
+
+    </div>
+</section>
+
+<section>
+    <h3>Alerts with stripes</h3>
+
+    <div class="example-inline">
+        <div class="example">
+            <div class="flash striped">Holy crap! Something happened!</div>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <div class="flash notice striped">Holy crap! Something happened!</div>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <div class="flash success striped">Holy crap! Something happened!</div>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <div class="flash alert striped">Holy crap! Something happened!</div>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <div class="flash warning striped">Holy crap! Something happened!</div>
+        </div>
+    </div>
+</section>
+{% endblock %}

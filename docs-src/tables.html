@@ -1,0 +1,98 @@
+{% extends 'layout.html' %}
+
+{% block head %}<h2>CSS | Tables</h2>{% endblock %}
+
+{% block content %}
+
+<section>
+    <h3>Simple table</h3>
+
+    <div class="example">
+<table class="items">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Andrey</td>
+            <td>admin</td>
+            <td><a href="mailto:andrey@aejis.eu">andrey@aejis.eu</a></td>
+        </tr>
+        <tr>
+            <td>Bart</td>
+            <td>user</td>
+            <td><a href="mailto:bart@simpsons.net">bart@simpsons.net</a></td>
+        </tr>
+        <tr>
+            <td>Barak</td>
+            <td>admin</td>
+            <td><a href="mailto:president@whitehouse.gov">president@whitehouse.gov</a></td>
+        </tr>
+    </tbody>
+</table>
+    </div>
+</section>
+
+<section>
+    <h3>Full table</h3>
+
+    <div class="example">
+<table class="items">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Email</th>
+        <th class="actions">
+          <a href="#" class="button success">Add user</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="inline-form">
+        <td><input type="text" name="name" class="short"></td>
+        <td>
+          <select name="role" class="short">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select>
+        </td>
+        <td><input type="email" name="email"></td>
+        <td class="actions"></td>
+      </tr>
+      <tr>
+        <td>Andrey</td>
+        <td><span class="label">admin</span></td>
+        <td><a href="mailto:andrey@aejis.eu">andrey@aejis.eu</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Bart</td>
+        <td><span class="label">user</span></td>
+        <td><a href="mailto:bart@simpsons.net">bart@simpsons.net</a></td>
+        <td class="actions">
+          <a href="#" class="button">Edit</a><a href="#" class="button danger">Delete</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Barak</td>
+        <td><span class="label">admin</span></td>
+        <td><a href="mailto:president@whitehouse.gov">president@whitehouse.gov</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Lisa</td>
+        <td><span class="label">user</span></td>
+        <td><a href="mailto:lisa@simpsons.net">lisa@simpsons.net</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+</table>
+    </div>
+</section>
+
+{% endblock %}

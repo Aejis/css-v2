@@ -1,0 +1,26 @@
+{
+  "name": "aejis-css",
+  "version": "1.0.0",
+  "description": "CSS patterns for Aejis backends",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aejis/css"
+  },
+  "author": "",
+  "license": "Proprietary",
+  "bugs": {
+    "url": "https://github.com/Aejis/css/issues"
+  },
+  "homepage": "https://github.com/Aejis/css",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-sass": "^1.3.3",
+    "gulp-swig": "^0.7.4",
+    "gulp-webserver": "^0.9.0"
+  }
+}

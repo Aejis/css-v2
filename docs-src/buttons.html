@@ -1,0 +1,102 @@
+{% extends 'layout.html' %}
+
+{% block head %}<h2>CSS | Buttons</h2>{% endblock %}
+
+{% block content %}
+
+<section>
+    <h3>Standard buttons</h3>
+
+    <div class="example-inline">
+        <div class="example">
+            <button>Example button</button>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <button class="primary">Example button</button>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <button class="success">Example button</button>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <button class="danger">Example button</button>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <button class="highlight">Example button</button>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>Button links</h3>
+
+    <div class="example-inline">
+        <div class="example">
+            <a class="button" href="#">Example button</a>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <a class="button primary" href="#">Example button</a>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <a class="button success" href="#">Example button</a>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <a class="button danger" href="#">Example button</a>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <a class="button highlight" href="#">Example button</a>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>Customizing buttons</h3>
+
+    <p>Here is default values for button module:</p>
+
+<pre><code class="hljs scss">$ae-btn-font-size: 0.8572rem !default;
+
+$ae-btn-margin: 0 4px 4px 0 !default;
+
+$ae-btn-padding-x: 0.6667em !default;
+$ae-btn-padding-y: 0.8333em !default;
+
+$ae-btn-color-normal:    #52656e !default;
+$ae-btn-color-primary:   #1893dc !default;
+$ae-btn-color-success:   #51a537 !default;
+$ae-btn-color-danger:    #d74343 !default;
+$ae-btn-color-highlight: #c29b00 !default;
+</code></pre>
+
+    <p>
+        Button module have a mixin for colorizing:
+    </p>
+<pre><code class="hljs scss">button .mycolor {
+  @include button-style(#f200ff);
+}</code></pre>
+</section>
+
+{% endblock %}

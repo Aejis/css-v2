@@ -1,0 +1,15 @@
+// Aejis CSS toolkit
+
+$ae-color-normal:    #52656e !default;
+$ae-color-primary:   #1893dc !default;
+$ae-color-success:   #51a537 !default;
+$ae-color-danger:    #d74343 !default;
+$ae-color-highlight: #c29b00 !default;
+
+@import 'general';
+@import 'typo';
+@import 'buttons';
+@import 'forms';
+@import 'tables';
+@import 'blocks';
+@import 'notifications';

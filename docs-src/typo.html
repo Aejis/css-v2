@@ -1,0 +1,234 @@
+{% extends 'layout.html' %}
+
+{% block head %}<h2>CSS | Typography</h2>{% endblock %}
+
+{% block content %}
+
+<section>
+    <h3>Headings</h3>
+
+    <div class="example">
+<h1>Header 1</h1>
+<h2>Header 2</h2>
+<h3>Header 3</h3>
+<h4>Header 4</h4>
+<h5>Header 5</h5>
+<h6>Header 6</h6>
+    </div>
+</section>
+
+<section>
+    <h3>Links</h3>
+
+    <div class="example-inline">
+        <div class="example">
+            <a href="#">Here is a link</a>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <a href="#" class="ajax">Here is a link</a>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <a href="#" class="danger">Here is a link</a>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>Paragraphs</h3>
+
+    <div class="example">
+<p>
+    The factory method pattern should not be confused with the more
+    general notion of factories and factory methods. The factory
+    method pattern is the best-known use of factories and factory
+    methods, but not all uses of factory methods are examples of the
+    factory method pattern &mdash; only when inheritance is involved
+    (a class implementing an interface, or derived class, implements a
+    factory method) is it an example of the factory method pattern.
+</p>
+<p>
+    Creating an object often requires complex processes not appropriate
+    to include within a composing object. The object's creation may
+    lead to a significant duplication of code, may require information
+    not accessible to the composing object, may not provide a sufficient
+    level of abstraction, or may otherwise not be part of the composing
+    object's concerns. The factory method design pattern handles these
+    problems by defining a separate method for creating the objects,
+    which subclasses can then override to specify the derived type
+    of product that will be created.
+</p>
+<p>
+    The factory method pattern relies on inheritance, as object
+    creation is delegated to subclasses that implement the factory
+    method to create objects.
+</p>
+    </div>
+</section>
+
+<section>
+    <h3>Blockqoutes</h3>
+
+    <div class="example">
+<blockquote>
+    <p>In our daily lives as programmers, we process text strings a lot. So I tried to work hard on text processing, namely the string class and regular expressions. Regular expressions are built into the language and are very tuned up for use.</p>
+    <footer>
+        <small class="author">Yukihiro Matsumoto</small> at <cite>Some conference</cite>
+    </footer>
+</blockquote>
+    </div>
+</section>
+
+<section>
+    <h3>Text styles</h3>
+
+    <div class="example-inline">
+        <div class="example">
+            <del>Deleted text</del>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <ins>Inserted text</ins>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <strong>Important text</strong>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <em>Emphatic stress</em>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <code>def code</code>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <sub>subscript</sub> and <sup>superscript</sup>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <abbr title="Abbreviation">ABBR</abbr>
+        </div>
+    </div>
+
+    <div class="example-inline">
+        <div class="example">
+            <span class="highlight">Highlighted text</span> and <mark>Marked text</mark>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>Unordered list</h3>
+
+    <div class="example">
+<ul>
+    <li>List item 1</li>
+    <li>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+    </li>
+    <li>List item 3</li>
+    <li>Sublist
+        <ul>
+            <li>Sublist item 1</li>
+            <li>Sublist item 2</li>
+        </ul>
+    </li>
+</ul>
+    </div>
+</section>
+
+<section>
+    <h3>Ordered list</h3>
+
+    <div class="example">
+<ol>
+  <li>List item 1</li>
+    <li>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+    </li>
+    <li>List item 3</li>
+    <li>Sublist
+        <ol>
+            <li>Sublist item 1</li>
+            <li>Sublist item 2</li>
+        </ol>
+    </li>
+</ol>
+    </div>
+</section>
+
+<section>
+    <h3>Unstyled list</h3>
+
+    <div class="example">
+<ul class="unstyled">
+    <li>List item 1</li>
+    <li>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+    </li>
+    <li>List item 3</li>
+    <li>Sublist
+        <ul>
+            <li>Sublist item 1</li>
+            <li>Sublist item 2</li>
+        </ul>
+    </li>
+</ul>
+    </div>
+</section>
+
+<section>
+    <h3>Definition list</h3>
+
+    <div class="example">
+<dl>
+    <dt>Single responsibility principle</dt>
+    <dd>
+        a class should have only a single responsibility (i.e. only one
+        potential change in the software's specification should be able
+        to affect the specification of the class)
+    </dd>
+    <dt>Open/closed principle</dt>
+    <dd>
+        <q>software entities … should be open for extension, but closed for
+           modification.
+        </q>
+    </dd>
+    <dt>Liskov substitution principle</dt>
+    <dd>
+        <q>objects in a program should be replaceable with instances of their
+           subtypes without altering the correctness of that program.
+        </q> See also design by contract.
+    </dd>
+</dl>
+    </div>
+</section>
+{% endblock %}

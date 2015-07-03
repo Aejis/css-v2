@@ -1,0 +1,161 @@
+$base-font-size:   14px !default;
+$base-line-height: 21px !default;
+$base-text-color:  #333 !default;
+
+$selection-color: #c9cfd6 !default;
+
+$ae-link-color-normal: $ae-color-primary !default;
+$ae-link-color-hover:  $ae-color-success !default;
+$ae-link-color-danger: $ae-color-danger  !default;
+
+@mixin font-sans {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+}
+
+@mixin font-serif {
+  font-family: Georgia, "Times New Roman", Times, "Liberation Serif", FreeSerif, serif;
+}
+
+html {
+  @include font-sans;
+
+  font-size: $base-font-size;
+  line-height: $base-line-height / $base-font-size;
+
+  color: $base-text-color;
+}
+
+::selection {
+  background: $selection-color;
+  text-shadow: none;
+}
+
+// Localized quotes
+// http://en.wikipedia.org/wiki/Non-English_usage_of_quotation_marks
+q { quotes: '\201C' '\201D' '\2018' '\2019'; }
+:lang(ru), :lang(ua), :lang(be), :lang(lv) { quotes: '\00AB' '\00BB' '\201E' '\201C'; }
+:lang(es), :lang(el), :lang(pt), :lang(it) { quotes: '\00AB' '\00BB' '\201C' '\201D'; }
+:lang(pl), :lang(ro) { quotes: '\201E' '\201D' '\00AB' '\00BB'; }
+:lang(da) { quotes: '\00BB' '\00AB' '\203A' '\2039'; }
+:lang(fr) { quotes: '\ab\2005' '\2005\bb' '\2039\2005' '\2005\203a'; }
+
+/*
+Base link styles
+
+:hover   - Hovered link
+:active  - Active link
+:visited - Visited link
+.ajax    - Link to ajax action
+.danger  - Link to dangerous action
+*/
+a {
+  color: $ae-link-color-normal;
+
+  //&:visited {
+  //  color: #3e2bcd;
+  //}
+
+  &:hover {
+    color: #3da800;
+    // @include single-transition(color, 0.20s, ease-in-out);
+  }
+
+  &.ajax {
+    text-decoration: none;
+    border-bottom: 1px dashed;
+  }
+
+  &.danger {
+    color: $ae-link-color-danger;
+
+    &:hover {
+      color: $base-text-color;
+    }
+  }
+}
+
+/*
+Text styles
+*/
+mark, span.highlight { padding: 0 2px; background-color: #fffbdc; }
+abbr, acronym { cursor: help; }
+
+/*
+Paragraphs
+*/
+p {
+  margin: 0 0 $base-line-height 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*
+Blockqoutes
+*/
+blockquote {
+  margin: 0;
+  padding: 0 0 0 1em;
+
+  border-left: 3px solid #ccc;
+
+  @include font-serif;
+  font-style: italic;
+
+  color: #777;
+
+  footer {
+    color: #333;
+
+    &:before {
+      content: "—";
+    }
+
+    small.author {
+      font: {
+        size: inherit;
+        weight: bold;
+      }
+    }
+  }
+}
+
+/*
+Headers
+*/
+h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: bold; }
+h5, h6 { margin-bottom: $base-line-height; }
+h1 { font-size: 2rem;       line-height: 3rem;   }
+h2 { font-size: 1.71429rem; line-height: 3rem;   }
+h3 { font-size: 1.57143rem; line-height: 3rem;   }
+h4 { font-size: 1.28571rem; line-height: 3rem;   }
+h5 { font-size: 1.14286rem; line-height: 1.5rem; }
+h6 { font-size: 1rem;       line-height: 1.5rem; }
+
+/*
+Lists
+
+.unstyled - List without bullets
+*/
+ul, ol {
+  margin: 0 0 $base-line-height 0;
+  padding: 0 0 0 1.6em;
+
+  &.unstyled {
+    list-style-type: none;
+  }
+}
+
+/*
+Definition list
+*/
+dl {
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin: 0 0 $base-line-height 1.6em;
+  }
+}
