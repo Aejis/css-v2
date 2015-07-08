@@ -1,8 +1,9 @@
-/* apply a natural box layout model to all elements, but allowing components to change */
+// apply a natural box layout model to all elements, but allowing components to change
+// Note: input[type="search"] box model set to content-box in normalize.css
 html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*, *:before, *:after, input[type="search"] {
   box-sizing: inherit;
 }

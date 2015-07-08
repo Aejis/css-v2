@@ -17,22 +17,33 @@ table.items {
     background-color: lighten(#e6e9eb, 7%);
   }
 
+  // Padding for td can be owerwritten in .actions
+  // Do not move this section
+  .inline-form {
+    background-color: #faf8f1;
+
+    td {
+      padding: 5px 4px;
+    }
+  }
+
   th, td {
     font-size: 0.9286rem;
     padding: 5px 6px;
     text-align: left;
+
+    &.actions, &.action {
+      padding: 1px 6px;
+      text-align: right;
+
+      white-space: nowrap;
+
+      form { display: inline-block; }
+    }
   }
 
   tbody {
     tr {
-      &.inline-form {
-        background-color: #faf8f1;
-
-        td {
-          padding: 5px 4px;
-        }
-      }
-
       &:last-child td {
         border-bottom: 0 none;
       }
@@ -41,11 +52,6 @@ table.items {
     td {
       border-bottom: 1px solid #e6e9eb;
     }
-  }
-
-  .actions {
-    padding: 1px 6px;
-    text-align: right;
   }
 
   button, .button {
