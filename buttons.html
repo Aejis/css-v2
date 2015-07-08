@@ -1,8 +1,46 @@
-{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-{% block head %}<h2>CSS | Buttons</h2>{% endblock %}
+        <title>Aejis CSS</title>
 
-{% block content %}
+        <link rel="stylesheet" href="/vendor/normalize.css">
+        <link rel="stylesheet" href="/css/main.css">
+
+        <script type="text/javascript" src="/vendor/highlight.pack.js"></script>
+        <link rel="stylesheet" href="/vendor/themes/color-brewer.css">
+
+        <link rel="stylesheet" href="/css/docs.css">
+    </head>
+    <body>
+        <header role="main">
+            <h1 class="logo">
+                <span>a</span>
+                <span>e</span>
+                <span>j</span>
+                <span>i</span>
+                <span>s</span>
+            </h1>
+
+            <h2>CSS | Buttons</h2>
+        </header>
+        <div id="body">
+          <aside>
+            <nav>
+              <ul>
+                <li><a href="/typo.html">Typography</a></li>
+                <li><a href="/buttons.html">Buttons</a></li>
+                <li><a href="/forms.html">Forms</a></li>
+                <li><a href="/tables.html">Tables</a></li>
+                <li><a href="/blocks.html">Blocks</a></li>
+                <li><a href="/notifications.html">Notifications</a></li>
+              </ul>
+            </nav>
+          </aside>
+          <div id="main">
+              
 
 <section>
     <h3>Standard buttons</h3>
@@ -109,4 +147,44 @@ $ae-btn-color-highlight: #c29b00 !default;
 }</code></pre>
 </section>
 
-{% endblock %}
+
+          </div>
+        </div>
+
+        <script>
+        (function() {
+          function escapeHTML(unsafe) {
+            return unsafe
+              .replace(/&/g, "&amp;")
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;")
+              .replace(/"/g, "&quot;")
+              .replace(/'/g, "&#039;").trim();
+          }
+
+          function createPreview(content) {
+            var pre = document.createElement('pre'),
+                code = document.createElement('code');
+
+            code.innerHTML = content;
+            pre.appendChild(code);
+            pre.classList.add('html');
+
+            return pre;
+          }
+
+          var examples = document.getElementsByClassName('example');
+
+          Array.prototype.forEach.call(examples, function(el) {
+            var content = escapeHTML(el.innerHTML)
+                preview = createPreview(content),
+                parent  = el.parentNode;
+
+            parent.insertBefore(preview, el.nextSibling);
+          });
+
+          hljs.initHighlightingOnLoad();
+        })();
+        </script>
+    </body>
+</html>
