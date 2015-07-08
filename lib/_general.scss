@@ -7,3 +7,15 @@ html {
 *, *:before, *:after, input[type="search"] {
   box-sizing: inherit;
 }
+
+@mixin clearfix {
+  &:after {
+  	visibility: hidden;
+  	display: block;
+  	content: "";
+  	clear: both;
+  	height: 0;
+  }
+}
+
+.clearfix { @include clearfix; }

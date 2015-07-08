@@ -85,4 +85,8 @@ button, a.button, input[type="submit"] {
   &.highlight {
     @include button-style($ae-btn-color-highlight);
   }
+
+  &.light {
+    padding: ($ae-btn-padding-x - 0.2em) ($ae-btn-padding-y - 0.2em);
+  }
 }

@@ -23,13 +23,9 @@
   }
 
   footer {
-    padding: 5px 10px;
+    padding: 6px 10px;
 
     border-top: 1px solid #eee;
-
-    button, .button {
-      margin-bottom: 0;
-    }
   }
 
   .body {
@@ -47,6 +43,50 @@
 
       background-color: $ae-color-danger;
     }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    li {
+      padding: 8px 10px;
+
+      border-bottom: 1px solid #e0e7eb;
+
+      &:last-child { border-bottom: none; }
+
+      &:hover { background-color: #f5f9fc; }
+    }
+
+    &.striped li:nth-child(even) {
+      background-color: #fafafa;
+
+      &:hover { background-color: darken(#f5f9fc, 2%); }
+    }
+  }
+
+  header, ul {
+    button, .button {
+      margin-top: -2px;
+      @extend .button.light;
+    }
+  }
+
+  header, ul, footer {
+    .action {
+      float: right;
+    }
+
+    button, .button {
+      margin-bottom: 0;
+    }
+  }
+
+  header, .body, footer {
+    @include clearfix;
   }
 }
 
