@@ -16,6 +16,10 @@ aside {
     list-style: none; }
     aside ul li {
       font-size: 18px; }
+      aside ul li > ul {
+        padding-left: 10px; }
+        aside ul li > ul li {
+          font-size: 16px; }
     aside ul a {
       color: #362333;
       text-decoration: none; }
