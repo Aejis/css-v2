@@ -51,7 +51,12 @@ gulp.task('docs-vendor', function() {
       .pipe(gulp.dest(dest.docsVendor));
 });
 
-gulp.task('docs-build', ['docs-html', 'docs-css', 'docs-vendor']);
+gulp.task('docs-fonts', function() {
+  gulp.src('docs-src/fonts/*')
+      .pipe(gulp.dest('docs/fonts'));
+});
+
+gulp.task('docs-build', ['docs-html', 'docs-css', 'docs-vendor', 'docs-fonts']);
 
 gulp.task('serve', function() {
   gulp.src('docs')
