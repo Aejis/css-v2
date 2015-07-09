@@ -19,6 +19,12 @@ aside {
 
     li {
       font-size: 18px;
+
+      > ul {
+        padding-left: 10px;
+
+        li { font-size: 16px; }
+      }
     }
 
     a {

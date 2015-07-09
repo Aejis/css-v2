@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+
+{% block head %}<h2>CSS | FontAwesome integration</h2>{% endblock %}
+
+{% block content %}
+
+<section>
+  <h3>FontAwesome integration</h3>
+
+  <h4>Font installation</h4>
+  <p>
+    <ul>
+      <li>Download latest release from <a href="http://fontawesome.io/">Official website</a></li>
+      <li>Unpack archive</li>
+      <li>Copy <code>/fonts</code> folder to your assets directory</li>
+    </ul>
+
+    It is possible to change the location of font files by defining <code>$font-path</code> variable (/fonts by default).<br>
+  </p>
+  <p>
+    You can also use CDN url:
+
+    <pre><code class="hljs scss">$font-path: "//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts";
+$fa-version: "4.0.0"; // Optional</code></pre>
+  </p>
+
+  <h4>Usage</h4>
+  <p>
+    FontAwesome integration is not included by default. There are two ways of add it:
+  </p>
+
+  <h5>Semantic</h5>
+
+  <pre><code class="hljs scss">@import 'fa-icons';
+
+.my-success-button {
+  @include icon-before(success, 16px);
+}
+
+.my-check-button {
+  @include icon-after(check);
+}
+
+li {
+  &::before {
+    @include icon-pseudo(circle);
+  }
+}</code></pre>
+
+  <h5>Non-semantic</h5>
+
+  <pre><code class="hljs html">&lt;link rel="stylesheet" href="/css/fa-icons-classes.css">
+&lt;a class="icon before link">Google&lt;/a></code></pre>
+
+</section>
+
+<section>
+  <h3>Examples</h3>
+
+  <div class="example-inline">
+    <div class="example">
+      <button class="icon check before success">Add</button>
+    </div>
+  </div>
+
+  <div class="example-inline">
+    <div class="example">
+      <button class="icon download after">Download</button>
+    </div>
+  </div>
+
+  <div class="example-inline">
+    <div class="example">
+      <a class="icon before link">Google</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

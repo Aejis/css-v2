@@ -18,4 +18,9 @@ html {
   }
 }
 
+@mixin text-antialiased() {
+  -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased;
+}
+
 .clearfix { @include clearfix; }

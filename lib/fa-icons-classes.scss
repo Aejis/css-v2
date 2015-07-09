@@ -1,0 +1,35 @@
+@mixin text-antialiased() {
+  -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased;
+}
+
+@import 'fa-icons';
+
+$icon-padding: 5px;
+
+.icon {
+  &::before, &::after {
+    @include icon-font;
+    font-size: inherit;
+  }
+
+  &.before::before {
+    margin-right: $icon-padding;
+  }
+
+  &.after::after {
+    margin-left: $icon-padding;
+  }
+
+  @each $name, $icon in $icons {
+    &.#{$name} {
+      &.before::before {
+        content: $icon;
+      }
+
+      &.after::after {
+        content: $icon;
+      }
+    }
+  }
+}
