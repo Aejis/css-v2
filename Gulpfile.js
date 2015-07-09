@@ -7,13 +7,15 @@ var gulp  = require('gulp'),
 var src = {
   lib: 'lib/**/*.scss',
   docs: 'docs-src/*.html',
-  docsCSS: 'docs-src/css/*.scss'
+  docsCSS: 'docs-src/css/*.scss',
+  docsVendor: 'docs-src/vendor/**/*'
 };
 
 var dest = {
   lib: 'docs/css',
   docs: 'docs',
-  docsCSS: 'docs/css'
+  docsCSS: 'docs/css',
+  docsVendor: 'docs/vendor'
 };
 
 gulp.task('lib', function () {
@@ -27,7 +29,11 @@ gulp.task('lib', function () {
 
 gulp.task('docs-html', function() {
   gulp.src(src.docs)
-      .pipe(swig())
+      .pipe(swig({
+        defaults: {
+          cache: false
+        }
+      }))
       .pipe(gulp.dest(dest.docs));
 });
 
@@ -39,6 +45,13 @@ gulp.task('docs-css', function() {
       }))
       .pipe(gulp.dest(dest.docsCSS));
 });
+
+gulp.task('docs-vendor', function() {
+  gulp.src(src.docsVendor)
+      .pipe(gulp.dest(dest.docsVendor));
+});
+
+gulp.task('docs-build', ['docs-html', 'docs-css', 'docs-vendor']);
 
 gulp.task('serve', function() {
   gulp.src('docs')
@@ -54,4 +67,4 @@ gulp.task('watch', function() {
   gulp.watch(src.docsCSS, ['docs-css']);
 });
 
-gulp.task('docs', ['serve', 'watch']);
+gulp.task('docs', ['lib', 'docs-build', 'serve', 'watch']);
