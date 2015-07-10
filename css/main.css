@@ -189,6 +189,15 @@ button, a.button, input[type="submit"] {
     background-color: rgba(82, 101, 110, 0.13); }
   button:focus, a.button:focus, input[type="submit"]:focus {
     box-shadow: 0 0 0 2px rgba(82, 101, 110, 0.2); }
+  button.accented, a.button.accented, input[type="submit"].accented {
+    color: #eaedef;
+    background-image: linear-gradient(to right, #52656e, #729396);
+    padding: calc(0.6667em + 1px) calc(0.8333em + 1px);
+    border: none;
+    background-position: 0 100%;
+    background-size: 100% auto; }
+    button.accented:hover, a.button.accented:hover, input[type="submit"].accented:hover {
+      background-size: 200% auto; }
   button.primary, a.button.primary, input[type="submit"].primary {
     border-color: #1893dc;
     color: #1584c5;
@@ -201,6 +210,9 @@ button, a.button, input[type="submit"] {
       background-color: rgba(24, 147, 220, 0.13); }
     button.primary:focus, a.button.primary:focus, input[type="submit"].primary:focus {
       box-shadow: 0 0 0 2px rgba(24, 147, 220, 0.2); }
+    button.primary.accented, a.button.primary.accented, input[type="submit"].primary.accented {
+      color: white;
+      background-image: linear-gradient(to right, #1893dc, #50d6ec); }
   button.success, a.button.success, input[type="submit"].success {
     border-color: #51a537;
     color: #489231;
@@ -213,6 +225,9 @@ button, a.button, input[type="submit"] {
       background-color: rgba(81, 165, 55, 0.13); }
     button.success:focus, a.button.success:focus, input[type="submit"].success:focus {
       box-shadow: 0 0 0 2px rgba(81, 165, 55, 0.2); }
+    button.success.accented, a.button.success.accented, input[type="submit"].success.accented {
+      color: #f9fdf8;
+      background-image: linear-gradient(to right, #51a537, #8ec85b); }
   button.danger, a.button.danger, input[type="submit"].danger {
     border-color: #d74343;
     color: #d32e2e;
@@ -225,6 +240,9 @@ button, a.button, input[type="submit"] {
       background-color: rgba(215, 67, 67, 0.13); }
     button.danger:focus, a.button.danger:focus, input[type="submit"].danger:focus {
       box-shadow: 0 0 0 2px rgba(215, 67, 67, 0.2); }
+    button.danger.accented, a.button.danger.accented, input[type="submit"].danger.accented {
+      color: white;
+      background-image: linear-gradient(to right, #d74343, #e47e96); }
   button.highlight, a.button.highlight, input[type="submit"].highlight {
     border-color: #c29b00;
     color: #a98700;
@@ -237,6 +255,9 @@ button, a.button, input[type="submit"] {
       background-color: rgba(194, 155, 0, 0.13); }
     button.highlight:focus, a.button.highlight:focus, input[type="submit"].highlight:focus {
       box-shadow: 0 0 0 2px rgba(194, 155, 0, 0.2); }
+    button.highlight.accented, a.button.highlight.accented, input[type="submit"].highlight.accented {
+      color: #fff8db;
+      background-image: linear-gradient(to right, #c29b00, #ff950a); }
   button.light, a.button.light, .group header a.button, .group ul a.button, input[type="submit"].light {
     padding: 0.4667em 0.6333em; }
 
@@ -496,3 +517,9 @@ table.items {
   .flash.striped {
     background-size: 40px 40px;
     background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent); }
+
+.button, button {
+  transition: background-color .1s linear; }
+  .button.accented, button.accented {
+    transition: none;
+    transition: background-size .2s linear; }

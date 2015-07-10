@@ -13,11 +13,13 @@
   -webkit-font-smoothing: antialiased;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
-  font-size: inherit; }
+  display: inline-block;
+  font-size: inherit;
+  text-decoration: underline; }
 .icon.before::before {
-  margin-right: 5px; }
+  margin-right: 3px; }
 .icon.after::after {
-  margin-left: 5px; }
+  margin-left: 3px; }
 .icon.adjust.before::before {
   content: "\f042"; }
 .icon.adjust.after::after {
@@ -2390,3 +2392,5 @@
   content: "\f166"; }
 .icon.youtube-square.after::after {
   content: "\f166"; }
+.icon::before, .icon::after {
+  text-decoration: none; }
