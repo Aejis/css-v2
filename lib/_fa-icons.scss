@@ -1,5 +1,6 @@
 $font-path:  "/fonts" !default;
 $fa-version: "4.3.0"  !default;
+$icon-padding: 3px;
 
 $icons: (
   adjust: "\f042",
@@ -607,22 +608,36 @@ $icons: (
 }
 
 @mixin icon-pseudo($icon, $size: inherit) {
-  content: map-get($icon, 'x');
-  font-size: $size;
+  $cont: map-get($icons, $icon);
+
+  display: inline-block;
+  content: "#{$cont}";
+
   @include icon-font;
+
+  font-size: $size;
+  line-height: 1.2em;
 }
 
-@mixin icon-before($icon, $size: inherit) {
+@mixin icon-before($icon, $size: inherit, $padding: $icon-padding) {
   &::before {
-    @include icon-pseudo($icon);
+    margin-right: $padding;
+    text-decoration: underline; // Hack for IE 8-11 to remove underline in links (1)
+    @include icon-pseudo($icon, $size);
   }
+
+  &::before { text-decoration: none; } // Hack for IE 8-11 to remove underline in links (2)
 }
 
-@mixin icon-after($icon, $size: inherit) {
+@mixin icon-after($icon, $size: inherit, $padding: $icon-padding) {
   &::after {
-    @include icon-pseudo($icon);
+    margin-left: $padding;
+    text-decoration: underline; // Hack for IE 8-11 to remove underline in links (1)
+    @include icon-pseudo($icon, $size);
   }
-}
+
+  &::after { text-decoration: none; } // Hack for IE 8-11 to remove underline in links (2)
+} // Thanks to LeJared@stackoverflow
 
 @font-face {
   font-family: 'FontAwesome';

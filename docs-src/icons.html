@@ -50,8 +50,53 @@ li {
   <h5>Non-semantic</h5>
 
   <pre><code class="hljs html">&lt;link rel="stylesheet" href="/css/fa-icons-classes.css">
-&lt;a class="icon before link">Google&lt;/a></code></pre>
+&lt;a class="icon before link" href="https://google.com/">Google&lt;/a></code></pre>
 
+</section>
+
+<section>
+  <h3>Semantic examples</h3>
+
+  <div class="example-inline">
+    <div class="example">
+      <button class="ex-update-button">Refresh</button>
+    </div>
+  </div>
+
+  <div class="example-inline">
+    <div class="example">
+      <button class="danger ex-delete-button">Delete</button>
+    </div>
+  </div>
+
+  <div class="example-inline">
+    <div class="example">
+      <a class="ex-history-link" href="#">History</a>
+    </div>
+  </div>
+
+  <div class="example-inline">
+    <div class="example">
+      <a class="ex-download-link" href="#">Download</a>
+    </div>
+  </div>
+
+  <h6>SCSS code:</h6>
+  <pre><code class="hljs scss">.ex-update-button {
+  @include icon-before(refresh);
+}
+
+.ex-delete-button {
+  @include icon-after(remove, inherit, 6px);
+}
+
+.ex-history-link {
+  @include icon-before(history, 12px);
+}
+
+.ex-download-link {
+  @include icon-after(download);
+}</code></pre>
 </section>
 
 <section>
@@ -71,7 +116,13 @@ li {
 
   <div class="example-inline">
     <div class="example">
-      <a class="icon before link">Google</a>
+      <a class="icon before link" href="#">Google</a>
+    </div>
+  </div>
+
+  <div class="example-inline">
+    <div class="example">
+      <a class="icon after external-link" href="#">Google</a>
     </div>
   </div>
 </section>

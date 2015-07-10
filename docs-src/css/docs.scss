@@ -1,3 +1,6 @@
+@import '../../lib/main';
+@import '../../lib/fa-icons';
+
 #body {
   display: flex;
 }
@@ -138,4 +141,21 @@ section {
       padding-right: 10px;
     }
   }
+}
+
+// SCSS examples
+.ex-update-button {
+  @include icon-before(refresh);
+}
+
+.ex-delete-button {
+  @include icon-after(remove, inherit, 6px);
+}
+
+.ex-history-link {
+  @include icon-before(history, 12px);
+}
+
+.ex-download-link {
+  @include icon-after(download);
 }
