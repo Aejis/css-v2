@@ -46,6 +46,14 @@ $ae-btn-color-highlight: $ae-color-highlight !default;
   }
 }
 
+@mixin button-accented($color) {
+  color: lighten($color, 55%);
+
+  $right-color: lighten(adjust-hue($color, -14%), 14%);
+
+  background-image: linear-gradient(to right, $color, $right-color);
+}
+
 button, a.button, input[type="submit"] {
   display: inline-block;
 
@@ -70,20 +78,38 @@ button, a.button, input[type="submit"] {
 
   @include button-style($ae-btn-color-normal);
 
+  &.accented {
+    @include button-accented($ae-btn-color-normal);
+
+    padding: calc(#{$ae-btn-padding-x} + 1px) calc(#{$ae-btn-padding-y} + 1px);
+    border: none;
+
+    background-position: 0 100%;
+    background-size: 100% auto;
+
+    &:hover {
+      background-size: 200% auto;
+    }
+  }
+
   &.primary {
     @include button-style($ae-btn-color-primary);
+    &.accented { @include button-accented($ae-btn-color-primary); }
   }
 
   &.success {
     @include button-style($ae-btn-color-success);
+    &.accented { @include button-accented($ae-btn-color-success); }
   }
 
   &.danger {
     @include button-style($ae-btn-color-danger);
+    &.accented { @include button-accented($ae-btn-color-danger); }
   }
 
   &.highlight {
     @include button-style($ae-btn-color-highlight);
+    &.accented { @include button-accented($ae-btn-color-highlight); }
   }
 
   &.light {

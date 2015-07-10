@@ -1,0 +1,12 @@
+$ae-animate-buttons: true !default;
+
+@if $ae-animate-buttons {
+  .button, button {
+    transition: background-color .1s linear;
+
+    &.accented {
+      transition: none;
+      transition: background-size .2s linear;
+    }
+  }
+}

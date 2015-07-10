@@ -67,7 +67,7 @@ gulp.task('serve', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(src.lib, ['lib']);
+  gulp.watch(src.lib, ['lib', 'docs-css']);
   gulp.watch(src.docs, ['docs-html']);
   gulp.watch(src.docsCSS, ['docs-css']);
 });
