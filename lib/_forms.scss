@@ -87,8 +87,12 @@ fieldset {
   }
 }
 
+.field {
+  margin-bottom: 10px;
+}
+
 input, textarea, select {
-  &.wide, .wide & {
+  &.wide, .wide &, .field & {
     width: 100%;
   }
 }
