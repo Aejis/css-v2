@@ -1,5 +1,4 @@
-$base-text-color:  #333 !default;
-
+$base-text-color: #333 !default;
 $selection-color: #c9cfd6 !default;
 
 $ae-link-color-normal: $ae-color-primary !default;
@@ -106,7 +105,7 @@ blockquote {
   footer {
     color: #333;
 
-    &:before {
+    &::before {
       content: "—";
     }
 

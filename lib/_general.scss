@@ -15,12 +15,12 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after, input[type="search"] {
+*, *::before, *::after, input[type="search"] {
   box-sizing: inherit;
 }
 
 @mixin clearfix {
-  &:after {
+  &::after {
   	visibility: hidden;
   	display: block;
   	content: "";
