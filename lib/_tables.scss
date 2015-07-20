@@ -1,95 +1,97 @@
-table.items {
-  width: 100%;
+.#{$ae-namespace} {
+  table.items {
+    width: 100%;
 
-  margin-bottom: $base-line-height;
+    margin-bottom: $base-line-height;
 
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: 4px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 4px;
 
-  th {
-    border-bottom: 1px solid darken(#e6e9eb, 5%);
+    th {
+      border-bottom: 1px solid darken(#e6e9eb, 5%);
 
-    text-shadow: #fff 0 1px 0;
-    font-weight: normal;
-    color: lighten(#58676e, 5%);
+      text-shadow: #fff 0 1px 0;
+      font-weight: normal;
+      color: lighten(#58676e, 5%);
 
-    background-color: lighten(#e6e9eb, 7%);
-  }
-
-  // Padding for td can be owerwritten in .actions
-  // Do not move this section
-  .inline-form {
-    background-color: #faf8f1;
-
-    td {
-      padding: 5px 4px;
+      background-color: lighten(#e6e9eb, 7%);
     }
-  }
 
-  th, td {
-    font-size: 0.9286rem;
-    padding: 5px 6px;
-    text-align: left;
+    // Padding for td can be owerwritten in .actions
+    // Do not move this section
+    .inline-form {
+      background-color: #faf8f1;
 
-    &.actions, &.action {
-      padding: 1px 6px;
-      text-align: right;
-
-      white-space: nowrap;
-
-      form { display: inline-block; }
-    }
-  }
-
-  tbody {
-    tr {
-      &:last-child td {
-        border-bottom: 0 none;
+      td {
+        padding: 5px 4px;
       }
     }
 
-    td {
-      border-bottom: 1px solid #e6e9eb;
+    th, td {
+      font-size: 0.9286rem;
+      padding: 5px 6px;
+      text-align: left;
+
+      &.actions, &.action {
+        padding: 1px 6px;
+        text-align: right;
+
+        white-space: nowrap;
+
+        form { display: inline-block; }
+      }
     }
-  }
 
-  button, .button {
-    margin-bottom: 0;
+    tbody {
+      tr {
+        &:last-child td {
+          border-bottom: 0 none;
+        }
+      }
 
-    font-size: 0.8462em;
-
-    padding: 0.4546em 0.7273em;
-
-    &:last-child {
-      margin-right: 0;
+      td {
+        border-bottom: 1px solid #e6e9eb;
+      }
     }
-  }
 
-  &.bordered {
-    border: 1px solid darken(#e6e9eb, 5%);
+    button, .button {
+      margin-bottom: 0;
 
-    th:first-child { border-top-left-radius: 4px; }
-    th:last-child { border-top-right-radius: 4px; }
+      font-size: 0.8462em;
 
-    td {
-      border-right: 1px solid #e0e7eb;
+      padding: 0.4546em 0.7273em;
 
       &:last-child {
-        border-right: none;
+        margin-right: 0;
       }
     }
 
-    td, th {
-      &:first-child {
-        padding-left: 10px;
-      }
-      &:last-child {
-        padding-right: 10px;
+    &.bordered {
+      border: 1px solid darken(#e6e9eb, 5%);
+
+      th:first-child { border-top-left-radius: 4px; }
+      th:last-child { border-top-right-radius: 4px; }
+
+      td {
+        border-right: 1px solid #e0e7eb;
+
+        &:last-child {
+          border-right: none;
+        }
       }
 
-      &.actions {
-        padding-right: 5px;
+      td, th {
+        &:first-child {
+          padding-left: 10px;
+        }
+        &:last-child {
+          padding-right: 10px;
+        }
+
+        &.actions {
+          padding-right: 5px;
+        }
       }
     }
   }

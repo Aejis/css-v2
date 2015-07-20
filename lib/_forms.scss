@@ -20,79 +20,81 @@ $ae-input-color-invalid: $ae-color-danger !default;
   }
 }
 
-input {
-  &[type="text"], &[type="password"], &[type="email"], &[type="url"], &[type="month"], &[type="number"], &[type="search"], &[type="tel"], &[type="week"] {
-    padding: 4px 6px;
+.#{$ae-namespace} {
+  input {
+    &[type="text"], &[type="password"], &[type="email"], &[type="url"], &[type="month"], &[type="number"], &[type="search"], &[type="tel"], &[type="week"] {
+      padding: 4px 6px;
 
-    border: 2px solid;
-    border-radius: 3px;
-
-    &::placeholder {
-      font-weight: normal;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    &:focus {
-      outline: none;
+      border: 2px solid;
+      border-radius: 3px;
 
       &::placeholder {
-        color: transparent;
+        font-weight: normal;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      &:focus {
+        outline: none;
+
+        &::placeholder {
+          color: transparent;
+        }
+      }
+
+      @include input-style($ae-input-color-normal);
+
+      &.valid, .valid & {
+        @include input-style($ae-input-color-valid);
+      }
+
+      &.invalid, .invalid & {
+        @include input-style($ae-input-color-invalid);
       }
     }
 
-    @include input-style($ae-input-color-normal);
-
-    &.valid, .valid & {
-      @include input-style($ae-input-color-valid);
-    }
-
-    &.invalid, .invalid & {
-      @include input-style($ae-input-color-invalid);
+    &[type="checkbox"], &[type="radio"] {
+      margin-right: 1ex;
     }
   }
 
-  &[type="checkbox"], &[type="radio"] {
-    margin-right: 1ex;
-  }
-}
+  textarea {
+    @extend input[type="text"];
 
-textarea {
-  @extend input[type="text"];
-
-  resize: vertical;
-}
-
-label {
-  color: #454f54;
-
-  .valid &, &.valid {
-    color: darken($ae-input-color-valid, 20%);
+    resize: vertical;
   }
 
-  .invalid &, &.invalid {
-    color: darken($ae-input-color-invalid, 20%);
+  label {
+    color: #454f54;
+
+    .valid &, &.valid {
+      color: darken($ae-input-color-valid, 20%);
+    }
+
+    .invalid &, &.invalid {
+      color: darken($ae-input-color-invalid, 20%);
+    }
   }
-}
 
-fieldset {
-  margin: 0 0 1em 0;
+  fieldset {
+    margin: 0 0 1em 0;
 
-  border: 1px solid darken(#e6e9eb, 5%);
-  border-radius: 4px;
+    border: 1px solid darken(#e6e9eb, 5%);
+    border-radius: 4px;
 
-  legend {
-    padding: 1px 4px;
-    margin-left: -4px;
-    color: lighten(#58676e, 5%);
+    legend {
+      padding: 1px 4px;
+      margin-left: -4px;
+      color: lighten(#58676e, 5%);
+    }
   }
-}
 
-.field {
-  margin-bottom: 10px;
-}
+  .field {
+    margin-bottom: 10px;
+  }
 
-input, textarea, select {
-  &.wide, .wide &, .field & {
-    width: 100%;
+  input, textarea, select {
+    &.wide, .wide &, .field & {
+      width: 100%;
+    }
   }
 }

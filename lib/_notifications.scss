@@ -1,54 +1,56 @@
-.flash {
-  padding: 5px 10px;
+.#{$ae-namespace} {
+  .flash {
+    padding: 5px 10px;
 
-  background-color: $ae-color-normal;
+    background-color: $ae-color-normal;
 
-  color: rgba(255, 255, 255, 0.9);
-  border-radius: 4px;
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
 
-  &.notice, &.primary {
-    background-color: $ae-color-primary;
-  }
-
-  &.success {
-    background-color: $ae-color-success;
-  }
-
-  &.alert, &.error, &.danger {
-    background-color: $ae-color-danger;
-  }
-
-  &.warning, &.highlight {
-    background-color: $ae-color-highlight;
-  }
-
-  .close {
-    float: right;
-
-    padding: 5px 8px;
-    margin: -4px -6px 0 0;
-
-    border: none;
-
-    font-weight: bold;
-    font-size: 1.1429rem;
-    line-height: 1em;
-
-    color: inherit;
-
-    background-color: transparent;
-
-    &:active {
-      background-color: none;
+    &.notice, &.primary {
+      background-color: $ae-color-primary;
     }
 
-    &:focus {
-      box-shadow: none;
+    &.success {
+      background-color: $ae-color-success;
     }
-  }
 
-  &.striped {
-    background-size: 40px 40px;
-    background-image: linear-gradient(-45deg, rgba(255, 255, 255, .1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .1) 75%, transparent 75%, transparent);
+    &.alert, &.error, &.danger {
+      background-color: $ae-color-danger;
+    }
+
+    &.warning, &.highlight {
+      background-color: $ae-color-highlight;
+    }
+
+    .close {
+      float: right;
+
+      padding: 5px 8px;
+      margin: -4px -6px 0 0;
+
+      border: none;
+
+      font-weight: bold;
+      font-size: 1.1429rem;
+      line-height: 1em;
+
+      color: inherit;
+
+      background-color: transparent;
+
+      &:active {
+        background-color: none;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    &.striped {
+      background-size: 40px 40px;
+      background-image: linear-gradient(-45deg, rgba(255, 255, 255, .1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .1) 75%, transparent 75%, transparent);
+    }
   }
 }
