@@ -43,11 +43,11 @@ $ae-input-color-invalid: $ae-color-danger !default;
 
       @include input-style($ae-input-color-normal);
 
-      &.valid, .valid & {
+      &.valid {
         @include input-style($ae-input-color-valid);
       }
 
-      &.invalid, .invalid & {
+      &.invalid {
         @include input-style($ae-input-color-invalid);
       }
     }
@@ -63,14 +63,18 @@ $ae-input-color-invalid: $ae-color-danger !default;
     resize: vertical;
   }
 
-  label {
+  .tip {
+    font-size: 0.8em;
+  }
+
+  label, .tip {
     color: #454f54;
 
-    .valid &, &.valid {
+    &.valid {
       color: darken($ae-input-color-valid, 20%);
     }
 
-    .invalid &, &.invalid {
+    &.invalid {
       color: darken($ae-input-color-invalid, 20%);
     }
   }
@@ -96,5 +100,26 @@ $ae-input-color-invalid: $ae-color-danger !default;
     &.wide, .wide &, .field & {
       width: 100%;
     }
+  }
+}
+
+// Hack for parent selectors
+.#{$ae-namespace} .valid label, .#{$ae-namespace} .valid .tip {
+  color: darken($ae-input-color-valid, 20%);
+}
+
+.#{$ae-namespace} .invalid label, .#{$ae-namespace} .invalid .tip {
+  color: darken($ae-input-color-invalid, 20%);
+}
+
+.#{$ae-namespace} .valid input {
+  &[type="text"], &[type="password"], &[type="email"], &[type="url"], &[type="month"], &[type="number"], &[type="search"], &[type="tel"], &[type="week"] {
+    @include input-style($ae-input-color-valid);
+  }
+}
+
+.#{$ae-namespace} .invalid input {
+  &[type="text"], &[type="password"], &[type="email"], &[type="url"], &[type="month"], &[type="number"], &[type="search"], &[type="tel"], &[type="week"] {
+    @include input-style($ae-input-color-invalid);
   }
 }

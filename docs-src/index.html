@@ -6,4 +6,33 @@
 
 <h2>Welcome to Aejis CSS v2</h2>
 
+<section>
+  <h3>Installation</h3>
+
+</section>
+
+<section>
+  <h3>Usage</h3>
+
+  <h4>Namespace</h4>
+  <p>
+    All destructive rules (styles for standard html elements, like buttons) will only work after adding namespace class to parent element. Default namespace is <code>aejis</code>
+    <br><br>
+
+    For example, this button will be styled:<pre><code class="hljs scss">&lt;div class="aejis"&gt;
+  &lt;button&gt;Press me&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+    &hellip;but this one will not:
+    <pre><code class="hljs scss">&lt;div&gt;
+  &lt;button&gt;Press me&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+  Namespace can be changed by defining <code>$ae-namespace</code> variable:
+  <pre><code class="hljs scss">$ae-namespace: 'cms';</code></pre>
+
+  </p>
+</section>
+
+
 {% endblock %}
