@@ -18,7 +18,7 @@ var dest = {
   docsVendor: 'docs/vendor'
 };
 
-gulp.task('lib', function () {
+gulp.task('lib', function() {
   gulp.src(src.lib)
       .pipe(sass())
       .pipe(autoprefixer({

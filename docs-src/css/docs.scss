@@ -1,6 +1,8 @@
 @import '../../lib/main';
 @import '../../lib/fa-icons';
 
+$font-path: "../fonts";
+
 #body {
   display: flex;
 }
@@ -46,6 +48,8 @@ aside {
 
   padding: 20px 30px;
   padding-right: 60px;
+
+  &>h2 { text-align: center; }
 }
 
 header[role="main"] {

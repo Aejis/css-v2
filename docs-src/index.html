@@ -4,11 +4,56 @@
 
 {% block content %}
 
-<h2>Welcome to Aejis CSS v2</h2>
+<h2>Aejis CSS v2.0.0.alpha1</h2>
+
+<section>
+  <h3>About</h3>
+
+  <p>
+    Aejis CSS is an opinionated CSS scaffold for user interfaces. It based on the idea of so-called isolated components, so instead of something like this:
+  </p>
+
+  <pre><code class="hljs html">&lt;div class="panel panel-default"&gt;
+  &lt;div class="panel-heading"&gt;Hello world&lt;/div&gt;
+  &lt;div class="panel-body"&gt;
+    &lt;p&gt;Lorem ipsum&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="panel-footer"&gt;Footnotes&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+  <p>you write this:</p>
+
+  <pre><code class="hljs html">&lt;div class="group"&gt;
+  &lt;header&gt;Hello world&lt;/header&gt;
+  &lt;div class="body"&gt;
+    &lt;p&gt;Lorem ipsum&lt;/p>
+  &lt;/div&gt;
+  &lt;footer&gt;Footnotes&lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+</section>
 
 <section>
   <h3>Installation</h3>
 
+  <p>
+    <img src="https://img.shields.io/badge/libsass-compatible-green.svg" alt="Libsass compatible">
+    <br>
+    Aejis CSS designed to be used as SASS library, so just checkout <a href="https://github.com/Aejis/css-v2/tree/master/lib">latest version</a> to the <code>/vendor</code> directory or something like that.
+  </p>
+  <pre><code class="hljs scss">@import "vendor/aejis/main";
+
+$ae-namespace: 'cms';</pre></code>
+
+
+  <h4>Normalize.css</h4>
+  <p>
+    Normalize CSS is required to work properly. If you still don't use it &mdash; <a href="http://necolas.github.io/normalize.css/">go get it</a> and enjoy.
+  </p>
+
+  <h4>Autoprefixer</h4>
+  <p>
+    <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> is highly recommended to handle vendor prefixes.
+  </p>
 </section>
 
 <section>
@@ -19,12 +64,12 @@
     All destructive rules (styles for standard html elements, like buttons) will only work after adding namespace class to parent element. Default namespace is <code>aejis</code>
     <br><br>
 
-    For example, this button will be styled:<pre><code class="hljs scss">&lt;div class="aejis"&gt;
+    For example, this button will be styled:<pre><code class="hljs html">&lt;div class="aejis"&gt;
   &lt;button&gt;Press me&lt;/button&gt;
 &lt;/div&gt;</code></pre>
 
     &hellip;but this one will not:
-    <pre><code class="hljs scss">&lt;div&gt;
+    <pre><code class="hljs html">&lt;div&gt;
   &lt;button&gt;Press me&lt;/button&gt;
 &lt;/div&gt;</code></pre>
 
