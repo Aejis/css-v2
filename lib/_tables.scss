@@ -14,7 +14,7 @@ table.items {
     font-weight: normal;
     color: lighten(#58676e, 5%);
 
-    background-color: lighten(#e6e9eb, 7%);
+    background-color: lighten(#e6e9eb, 5%);
   }
 
   // Padding for td can be owerwritten in .actions
@@ -40,6 +40,17 @@ table.items {
 
       form { display: inline-block; }
     }
+  }
+
+  &.striped {
+    tbody tr:nth-child(even) {
+      background-color: lighten(#e6e9eb, 7%);
+    }
+  }
+
+  &.hoverable tbody tr:hover:not(.inline-form) {
+    background-color: lighten($ae-color-primary, 49%);
+    color: $ae-color-primary;
   }
 
   tbody {
@@ -92,5 +103,18 @@ table.items {
         padding-right: 5px;
       }
     }
+  }
+
+  .label {
+    padding: 2px 4px;
+
+    border: 1px solid #e6e9eb;
+    border-radius: 3px;
+
+    background-color: lighten(#e6e9eb, 4%);
+    color: lighten(#58676e, 5%);
+
+    font-size: .9em;
+    text-shadow: #fff 0 1px 0;
   }
 }
