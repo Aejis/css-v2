@@ -18,6 +18,11 @@ $ae-input-color-invalid: $ae-color-danger !default;
   &:hover {
     background-color: rgba($color, 0.05);
   }
+
+  &:disabled, &:read-only {
+    background-color: rgba($color, 0.2);
+    cursor: not-allowed;
+  }
 }
 
 .#{$ae-namespace} {
