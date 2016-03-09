@@ -51,6 +51,14 @@ table.items {
   &.hoverable tbody tr:hover:not(.inline-form) {
     background-color: lighten($ae-color-primary, 49%);
     color: $ae-color-primary;
+
+    td {
+      border-bottom: 1px solid lighten($ae-color-primary, 45%);
+    }
+
+    &:last-child td {
+      border-bottom: 0 none;
+    }
   }
 
   tbody {
