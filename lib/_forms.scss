@@ -30,7 +30,7 @@ $ae-input-color-invalid: $ae-color-danger !default;
     &[type="text"], &[type="password"], &[type="email"], &[type="url"], &[type="month"], &[type="number"], &[type="search"], &[type="tel"], &[type="week"] {
       padding: 4px 6px;
 
-      border: 2px solid;
+      border: 1px solid;
       border-radius: 3px;
 
       &::placeholder {

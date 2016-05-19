@@ -42,7 +42,7 @@ $ae-btn-color-highlight: $ae-color-highlight !default;
 
   $right-color: lighten(adjust-hue($color, -10%), 15%);
 
-  background-image: linear-gradient(to right, $color, $right-color);
+  background: $color; //linear-gradient(to right, $color, $right-color);
 }
 
 .button {
