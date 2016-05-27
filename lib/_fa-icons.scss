@@ -699,12 +699,17 @@ $icons: (
   youtube-square: "\f166"
 );
 
+@mixin text-antialiased() {
+  -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased;
+}
+
 @mixin icon-font {
   font-family: FontAwesome;
   font-weight: normal;
   text-rendering: auto; // optimizelegibility throws things off #1094
 
-  @include text-antialiased;
+  @include text-antialiased();
   transform: translate(0, 0); // ensures no half-pixel rendering in firefox
 }
 

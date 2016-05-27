@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block head %}<h2>CSS | Tabs</h2>{% endblock %}
+
+{% block content %}
+<section>
+  <h3>Simple tabs</h3>
+
+  <div class="example">
+<div class="tabs">
+  <ul>
+    <li class="active">first tab</li>
+    <li>second tab</li> 
+    <li>third tab</li>
+  </ul>
+</div>
+<div  class="tb-content">
+  <ul>
+    <li class="active">Text 1 ert er er r er re rerjttg </li>
+    <li>Text 2</li>
+    <li>Text 3</li>
+  </ul>
+</div>
+  </div>
+
+<!--   <div class="example">
+    <div id="tabs" class="tabs">
+        <h4 class="active">first tab</h4>
+        <h4>second tab</h4>
+        <h4>third tab</h4>
+    </div>
+    <div id="tb-content" class="tb-content">
+        <p class="active">Text 1</p>
+        <p>Text 2</p>
+        <p>Text 3</p>
+    </div>
+  </div> -->
+<script type="text/javascript">
+  
+$(document).ready(function(){
+  $(".tabs ul li").click(function(e){п
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $(".tabs ul li.active").removeClass("active");
+            $(this).addClass("active");
+            $(".tb-content ul li.active").removeClass("active");
+            $(".tb-content ul li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+</script>
+</section>
+
+{% endblock %}

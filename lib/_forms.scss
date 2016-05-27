@@ -1,6 +1,11 @@
-$ae-input-color-normal:  #b7b7b7 !default;
+// $ae-input-color-normal:  #b7b7b7 !default;
+$ae-input-color-normal: #c0c4c6;
 $ae-input-color-valid:   $ae-color-success !default;
 $ae-input-color-invalid: $ae-color-danger !default;
+// $ae-fieldset-color: #e6e9eb
+// $ae-legend-color: #58676e;
+$ae-legend-color: #343035;
+$ae-fieldset-color: #dfe5e7;
 
 @mixin input-style($color) {
   border-color: $color;
@@ -16,12 +21,13 @@ $ae-input-color-invalid: $ae-color-danger !default;
   }
 
   &:hover {
-    background-color: rgba($color, 0.05);
+    border-color: darken($color, 15%);
   }
 
   &:disabled, &:read-only {
-    background-color: rgba($color, 0.2);
+    background-color: lighten(rgba($color, 0.2), 12%);
     cursor: not-allowed;
+    color: $color + darken($ae-color-normal, 30%);
   }
 }
 
@@ -73,7 +79,7 @@ $ae-input-color-invalid: $ae-color-danger !default;
   }
 
   label, .tip {
-    color: #454f54;
+    color: $ae-color-normal;
 
     &.valid {
       color: darken($ae-input-color-valid, 20%);
@@ -87,13 +93,14 @@ $ae-input-color-invalid: $ae-color-danger !default;
   fieldset {
     margin: 0 0 1em 0;
 
-    border: 1px solid darken(#e6e9eb, 5%);
+    border: 1px solid $ae-fieldset-color;
     border-radius: 4px;
 
     legend {
+      font-weight: bolder;
       padding: 1px 4px;
       margin-left: -4px;
-      color: lighten(#58676e, 5%);
+      color: $ae-legend-color;
     }
   }
 

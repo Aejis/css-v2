@@ -1,3 +1,6 @@
+@import 'fa-icons-classes';
+@import 'fa-icons';
+
 $ae-btn-font-size: 0.8572rem !default;
 
 $ae-btn-margin: 0 4px 4px 0 !default;
@@ -12,16 +15,18 @@ $ae-btn-color-primary:   $ae-color-primary   !default;
 $ae-btn-color-success:   $ae-color-success   !default;
 $ae-btn-color-danger:    $ae-color-danger    !default;
 $ae-btn-color-highlight: $ae-color-highlight !default;
+$btn-icon: 'plus' !default;
 
 @mixin button-style($color) {
   border-color: $color;
-  color: darken($color, 5%);
-
-  background-color: rgba($color, 0.03);
+  color: $color;
 
   &:hover {
-    background-color: rgba($color, 0.08);
-    color: darken($color, 5%);
+    text-decoration: none;
+    background-color: $color;
+    color: #fff;
+    border-bottom: none;
+    border: 1px solid $color;
   }
 
   &:active, &:focus {
@@ -38,18 +43,29 @@ $ae-btn-color-highlight: $ae-color-highlight !default;
 }
 
 @mixin button-accented($color) {
-  color: lighten($color, 55%);
+  outline: none;
+  color: #fff;
+  background: $color; 
 
-  $right-color: lighten(adjust-hue($color, -10%), 15%);
+  &:hover {
+    border: none;
+    background: lighten($color, 20%);
+  }
 
-  background: $color; //linear-gradient(to right, $color, $right-color);
+  &:active {
+    background-color: darken($color, 20%);
+  }
+}
+
+a.button{
+  @include button-style($ae-btn-color-normal);
 }
 
 .button {
   display: inline-block;
 
   margin: $ae-btn-margin;
-  padding: $ae-btn-padding-x $ae-btn-padding-y;
+  padding: calc(#{$ae-btn-padding-x} + 3px) calc(#{$ae-btn-padding-y} + 3px);
 
   border: 1px solid $ae-btn-color-normal;
   border-radius: $ae-btn-border-radius;
@@ -66,13 +82,12 @@ $ae-btn-color-highlight: $ae-color-highlight !default;
   cursor: pointer;
 
   background: transparent;
-
   @include button-style($ae-btn-color-normal);
 
   &.accented {
     @include button-accented($ae-btn-color-normal);
 
-    padding: calc(#{$ae-btn-padding-x} + 1px) calc(#{$ae-btn-padding-y} + 1px);
+    padding: calc(#{$ae-btn-padding-x} + 3px) calc(#{$ae-btn-padding-y} + 3px);
     border: none;
 
     background-position: 0 100%;
@@ -82,7 +97,19 @@ $ae-btn-color-highlight: $ae-color-highlight !default;
       background-size: 200% auto;
     }
   }
+  @each $btn-icon in map-keys($icons){
+    &.#{$btn-icon}{
+      font: {
+        size: 12px;
+      }
 
+      &:before{
+       @include icon-pseudo($btn-icon, 15px); 
+       padding-right: 8px;
+      }
+    }
+  }
+ 
   &.primary {
     @include button-style($ae-btn-color-primary);
     &.accented { @include button-accented($ae-btn-color-primary); }
