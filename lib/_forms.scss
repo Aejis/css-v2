@@ -41,7 +41,8 @@ $ae-fieldset-color: #dfe5e7;
        padding-left: 8px;
        color: darken($color, 20%);
        border-left: 1px solid $color;
-       height: 20px;
+       line-height: 32px;
+       vertical-align: top;
 
   }
 }
@@ -66,7 +67,7 @@ $ae-fieldset-color: #dfe5e7;
   }
   input {
     &[type="text"], &[type="password"], &[type="email"], &[type="url"], &[type="month"], &[type="number"], &[type="search"], &[type="tel"], &[type="week"] {
-      padding: 4px 6px;
+      padding: 9px 6px;
 
       border: 1px solid;
       border-radius: 3px;
