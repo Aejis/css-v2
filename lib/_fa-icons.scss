@@ -1,6 +1,6 @@
 $font-path:  "/fonts" !default;
 $fa-version: "4.5.0"  !default;
-$icon-padding: 3px;
+$icon-padding: 8px;
 
 $icons: (
   500px: "\f26e",
@@ -713,7 +713,7 @@ $icons: (
   transform: translate(0, 0); // ensures no half-pixel rendering in firefox
 }
 
-@mixin icon-pseudo($icon, $size: inherit) {
+@mixin icon-pseudo($icon, $size) {
   $cont: map-get($icons, $icon);
 
   display: inline-block;
@@ -721,15 +721,16 @@ $icons: (
 
   @include icon-font;
 
-  font-size: $size;
+  font-size: $size ;
   line-height: 1.2em;
 }
+
 
 @mixin icon-before($icon, $size: inherit, $padding: $icon-padding) {
   &::before {
     margin-right: $padding;
     text-decoration: underline; // Hack for IE 8-11 to remove underline in links (1)
-    @include icon-pseudo($icon, $size);
+    @include icon-pseudo($icon, $size );
   }
 
   &::before { text-decoration: none; } // Hack for IE 8-11 to remove underline in links (2)

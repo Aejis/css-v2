@@ -1,6 +1,3 @@
-@import 'fa-icons-classes';
-@import 'fa-icons';
-
 $ae-btn-font-size: 0.8572rem !default;
 
 $ae-btn-margin: 0 4px 4px 0 !default;
@@ -96,18 +93,6 @@ a.button{
 
     &:hover {
       background-size: 200% auto;
-    }
-  }
-  @each $btn-icon in map-keys($icons){
-    &.#{$btn-icon}{
-      font: {
-        size: 12px;
-      }
-
-      &:before{
-       @include icon-pseudo($btn-icon, 15px); 
-       padding-right: 8px;
-      }
     }
   }
  
