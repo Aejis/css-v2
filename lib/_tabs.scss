@@ -13,9 +13,10 @@ $ae-tabs-color-normal: $ae-input-color-normal;
       color: lighten($ae-color-normal,20%);
       padding: calc(#{$ae-btn-padding-x} + 3px) calc(#{$ae-btn-padding-y} + 3px);
       display: inline-block;
-
+      cursor: pointer;
       &.active{
         background-color: lighten($ae-table-color-grey, 5%);
+        cursor: default;
       }
     }
   }
