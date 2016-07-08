@@ -31,8 +31,19 @@
 
     <div class="example-inline">
         <div class="example">
-            
-            <button for ="search"><input type="search" id ="search" class="search"></button>
+            <div class="search">
+                <input type="search" class="search">
+                <button class="icon search after"></button>
+            </div>
+        </div>
+    </div>
+    <div class="example-inline">
+        <div class="example">
+            <div class="search">
+                <input type="search" class="search">
+                <button class="search-result-buttonX"></button>
+                <button class="icon search after"></button>
+            </div>
         </div>
     </div>
 
@@ -227,5 +238,4 @@ $ae-input-color-invalid: #db4f4f !default;
   @include input-style(#f200ff);
 }</code></pre>
 </section>
-
 {% endblock %}

@@ -1,3 +1,4 @@
+@import 'fa-icons-classes';
 $ae-table-color-grey: #e6e9eb;
 
 table.items {
@@ -15,8 +16,28 @@ table.items {
     text-shadow: #fff 0 1px 0;
     font-weight: normal;
     color: lighten(#58676e, 5%);
+    width: auto;
 
     background-color: lighten($ae-table-color-grey, 5%);
+    &.unsorted::after, &.unsorted::before{
+      color: darken($ae-table-color-grey, 20%);
+    }
+    &.sort-up:after, &.sort-up:before{
+      line-height: 15px;
+      vertical-align: bottom;
+      color: darken($ae-table-color-grey, 20%);
+    }
+    &.sort-down:after, &.sort-down:before{
+      line-height: 15px;
+      vertical-align: top;
+      color:darken($ae-table-color-grey, 20%);
+    }
+    &:hover{
+      &:after{
+        color: darken($ae-table-color-grey, 40%);
+        cursor: pointer;
+      }
+    }
   }
 
   // Padding for td can be owerwritten in .actions

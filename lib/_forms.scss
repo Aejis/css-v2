@@ -8,10 +8,10 @@ $ae-input-color-invalid: $ae-color-danger !default;
 // $ae-legend-color: #58676e;
 $ae-legend-color: #343035;
 $ae-fieldset-color: #dfe5e7;
+$ae-input-heit: 32px !default;
 
 @mixin input-style($color) {
   border-color: $color;
-
   color: darken($color, 30%);
 
   &::placeholder {
@@ -19,7 +19,7 @@ $ae-fieldset-color: #dfe5e7;
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px rgba($color, 0.3);
+    border-color: $ae-color-primary;
   }
 
   &:hover {
@@ -32,87 +32,146 @@ $ae-fieldset-color: #dfe5e7;
     color: $color + darken($ae-color-normal, 30%);
   }
 }
+
 @mixin btn-input($color) {
   border: 1px solid $color;
   border-radius: 2px;
-  // width: auto;
-    //     &:after{
-    //      @include icon-pseudo("search", 15px); 
-    //      padding-right: 8px;
-    //      padding-left: 8px;
-    //      color: darken($color, 20%);
-    //      border-left: 1px solid $color;
-    //      line-height: 34px;
-    //      vertical-align: top;
-    // }
+}
+
+@mixin btn($color) {
+  border-left: 1px solid $color;
+  border-radius: 0;
+  &:hover{
+    background-color: #fff;
+    color: darken($color, 30%);
+  }
+  &:focus{
+    box-shadow: none;
+  }
+  &:active {
+    box-shadow: none;
+  }
 }
 
 @mixin btn-x($color) {
-  border-left: 1px solid $color;
   line-height: 34px;
   border-radius: 0;
+  color: lighten($color, 5%);
+
   &:before{
     @include icon-pseudo("times", 15px);
-        position: absolute;
-        right: 31px;
-        top: 0;
-        padding-right: 8px;
-         padding-left: 8px;
-         color: darken($color, 20%);
-         // border-left: 1px solid $color;
-         line-height: 34px;
-         vertical-align: top;
+    position: absolute;
+    right: 31px;
+    top: 0;
+    padding-right: 8px;
+    padding-left: 8px;
+    line-height: 34px;
+    vertical-align: top;
+  }
+
+  &:hover{
+    background-color: #fff;
+    color: darken($color, 40%);
+  }
+
+  &:focus{
+    box-shadow: none;
+    color: darken($color, 40%);
+  }
+
+  &:active{
+    box-shadow: none; 
   }
 }
 
 .#{$ae-namespace} {
-  form.search{
-      padding: 0;
-
+  div.search{
+    padding: 0;
     display: inline-block;
-    @include btn-input($ae-input-color-normal);
+    position: relative;
+
     &:hover{
-        @include btn-input($ae-color-primary);
-        background: #fff !important;  
-      }
-    // @include button-style($ae-input-color-normal);
+      background: #fff !important;  
+
       input.search{
+        border-color: $ae-color-primary;
+      }
+
+      button.search {
+        border-left: 1px solid $ae-color-primary;
+      }
+    }
+
+    &:focus{
+      border-color: $ae-color-primary;
+
+      button.search {
+        border-left: 1px solid $ae-color-primary;
+      }
+    }
+
+    button.search{
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      padding-right: 9px;
+      height: $ae-input-heit;
+      width: $ae-input-heit;
+      vertical-align: top;
+      border: none;
+      @include btn($ae-input-color-normal)
+
+      &:focus{
+        top:0;
+        right: 0;
+        height: 34px;
+        border: 1px solid $ae-color-primary;
+      }
+    }
+
+    input.search{
       border: none;
       border-top-left-radius: 2px;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 2px;
       width: inherit;
+      overflow: hidden;
+      padding-right:  64px;
+      @include btn-input($ae-input-color-normal);
+
       &.active{
           background-color: red;
           color: green;
       }
-      &:focus button[for="search"]{
-         @include btn-input($ae-color-primary);
+
+      &:focus {
+        border-color: $ae-color-primary;
+        ~ button{
+          border-color: $ae-color-primary;
+        }
       }
     }
-    // button[for="search"]{
-      
-    // }
-  }
 
-  form.search-result-buttonX{
-    position: relative;
-
-    button.search{
+    button.search-result-buttonX{
+      position: absolute;
+      top: 1px;
+      right: 1px;
       margin: 0;
       padding: 0;
-      height: 34px;
-      width: 31px;
+      height: $ae-input-heit;
+      width: $ae-input-heit;
       vertical-align: top;
       border: none;
-
       @include btn-x($ae-input-color-normal);
     }
   }
+
   input {
     &[type="text"], &[type="password"], &[type="email"], &[type="url"], &[type="month"], &[type="number"], &.search, &[type="tel"], &[type="week"] {
-      padding: 9px 6px;
+      padding: 8px 6px;
 
       border: 1px solid;
       border-radius: 3px;
