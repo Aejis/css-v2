@@ -47,7 +47,7 @@ $btn-icon: 'plus' !default;
 
   &:hover {
     border: none;
-    background: lighten($color, 20%);
+    background: lighten($color, 10%);
   }
 
   &:active {
@@ -63,7 +63,7 @@ a.button{
   display: inline-block;
 
   margin: $ae-btn-margin;
-  padding: calc(#{$ae-btn-padding-x} + 3px) calc(#{$ae-btn-padding-y} + 3px);
+  padding: calc(#{$ae-btn-padding-x} + 1px) calc(#{$ae-btn-padding-y} + 1px);
 
   border: 1px solid $ae-btn-color-normal;
   border-radius: $ae-btn-border-radius;
@@ -85,7 +85,7 @@ a.button{
   &.accented {
     @include button-accented($ae-btn-color-normal);
 
-    padding: calc(#{$ae-btn-padding-x} + 3px) calc(#{$ae-btn-padding-y} + 3px);
+    padding: calc(#{$ae-btn-padding-x} + 2px) calc(#{$ae-btn-padding-y} + 2px);
     border: none;
 
     background-position: 0 100%;

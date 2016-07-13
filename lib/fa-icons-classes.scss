@@ -20,12 +20,12 @@
     &.#{$name} {
       &.before::before {
         content: $icon;
-        font-size: 15px;
+        font-size: inherit;
       }
 
       &.after::after {
         content: $icon;
-        font-size: 15px;
+        font-size: inherit;
       }
     }
   }
