@@ -24,7 +24,7 @@ $btn-icon: 'plus' !default;
     color: #fff;
     border-bottom: none;
     border: 1px solid $color;
-    border-radius: 2px;
+    border-radius: $ae-btn-border-radius;
   }
 
   &:active, &:focus {

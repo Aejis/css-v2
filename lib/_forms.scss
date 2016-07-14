@@ -89,32 +89,31 @@ $ae-input-heit: 30px !default;
 }
 
 .#{$ae-namespace} {
-  div.search{
+  div.search {
     padding: 0;
     display: inline-block;
     position: relative;
 
-    &:hover{
+    &:hover {
       background: #fff !important;  
 
-      input.search{
-        border-color: $ae-color-primary;
+      input {        border-color: $ae-color-primary;
       }
 
-      button.search {
+      button {
         border-left: 1px solid $ae-color-primary;
       }
     }
 
-    &:focus{
+    &:focus {
       border-color: $ae-color-primary;
 
-      button.search {
+      button {
         border-left: 1px solid $ae-color-primary;
       }
     }
 
-    button.search{
+    button {
       margin: 0;
       padding: 0;
       position: absolute;
@@ -122,7 +121,6 @@ $ae-input-heit: 30px !default;
       right: 1px;
       padding-right: 9px;
       height: $ae-input-heit;
-      // width: $ae-input-heit+2px;
       vertical-align: top;
       border: none;
       @include btn($ae-input-color-normal)
@@ -135,7 +133,7 @@ $ae-input-heit: 30px !default;
       }
     }
 
-    input.search{
+    input{
       border: none;
       border-top-left-radius: 2px;
       border-top-right-radius: 0;
@@ -176,7 +174,7 @@ $ae-input-heit: 30px !default;
     margin-left: 8px; 
   }
   input {
-    &[type="text"], &[type="password"], &[type="email"], &[type="url"], &[type="month"], &[type="number"], &.search, &[type="tel"], &[type="week"] {
+    &[type="text"], &[type="password"], &[type="email"], &[type="url"], &[type="month"], &[type="number"], &[type="search"], &[type="tel"], &[type="week"] {
       padding: 7px 7px;
 
       border: 1px solid;
