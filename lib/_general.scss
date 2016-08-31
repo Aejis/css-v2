@@ -1,5 +1,7 @@
 $base-font-size:   14px !default;
 $base-line-height: 21px !default;
+// base-margin = (base-line-height - $ae-bdgs-height)/2
+$base-margin: 2px !default;
 
 $ae-namespace: 'aejis' !default;
 
@@ -7,7 +9,9 @@ $ae-color-normal:    #47585f !default;
 $ae-color-primary:   #28a5e7 !default;
 $ae-color-success:   #17b069 !default;
 $ae-color-danger:    #ec394f !default;
-$ae-color-highlight: #c29b00 !default;
+// $ae-color-highlight: #c29b00 !default;
+$ae-color-highlight: #f4be23 !default;
+
 
 // apply a natural box layout model to all elements, but allowing components to change
 // Note: input[type="search"] box model set to content-box in normalize.css

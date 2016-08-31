@@ -1,0 +1,63 @@
+
+$ae-bdgs-color-normal:    $ae-color-normal    !default;
+$ae-bdgs-color-primary:   $ae-color-primary   !default;
+$ae-bdgs-color-success:   $ae-color-success   !default;
+$ae-bdgs-color-danger:    $ae-color-danger    !default;
+$ae-bdgs-color-highlight: $ae-color-highlight !default;
+$ae-bdgs-color-normal-light: #c1c9cd;
+
+$ae-bdgs-font-size: 9px !default;
+$ae-btn-border-radius: 10px !default;
+$ae-bdgs-height: 16px !default;
+$ae-bdgs-padding: 0 7px !default;
+
+@mixin badges-style($color){
+  font:{
+    size: $ae-bdgs-font-size;
+    weight: bold;
+  }
+  text-transform: uppercase;
+
+  height: $ae-bdgs-height;
+  padding: $ae-bdgs-padding;
+  margin-top: $base-margin;
+  margin-bottom: $base-margin;
+
+  border: solid 1px $color;
+  border-radius: 10px;
+
+  color: #fff;
+  background-color: $color;
+  &.toEnd{   
+    float: right;   
+    clear: both;
+  }
+}
+
+.#{$ae-namespace} {
+  .badges{
+    @include badges-style($ae-bdgs-color-normal-light);
+    color: $ae-bdgs-color-normal;
+    background-color: #fff;
+
+    &.near{
+      
+    }
+    &.toEnd{
+      text-align: right;
+    }
+    &.primary {
+      @include badges-style($ae-bdgs-color-primary);
+    }
+    &.success{
+      @include badges-style($ae-bdgs-color-success);
+    }
+    &.danger{
+      @include badges-style($ae-bdgs-color-danger);
+    }
+    &.highlight{
+      @include badges-style($ae-bdgs-color-highlight);
+    }
+  }
+
+}
