@@ -8,13 +8,25 @@
     <h3>Badges</h3>
 
     <div class="example">
-    <h3> Shopping list</h3>
-    <ol>
-      <li>blue t-shit <span class="badges">2</span><span class="badges toEnd success">done</span> </li>
-      <li>socks <span class="badges">4</span> <span class="badges highlight toEnd">almost</span></li>
-    </ol>
-
-
+      <h3> Shopping list</h3>
+      <ol>
+        <li>blue t-shit <span class="badges">2</span><span class="badges toEnd success">done</span> </li>
+        <li>socks <span class="badges">4</span> <span class="badges highlight toEnd">almost</span></li>
+      </ol>
+    </div>
+    <div class="example">
+      <div class="container">
+        <h3>Tooltip Example</h3>
+        <div class="tooltips">
+          <a href="#" title="Hooray!">Hover over me</a>
         </div>
+      </div>
+
+      <script>
+      $(document).ready(function(){
+          $('.tooltips a[title]').tooltip;
+      });
+      </script>
+    </div>
 
 {% endblock %}
