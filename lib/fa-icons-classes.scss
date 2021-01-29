@@ -1,8 +1,3 @@
-@mixin text-antialiased() {
-  -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased;
-}
-
 @import 'fa-icons';
 
 .icon {
@@ -25,10 +20,12 @@
     &.#{$name} {
       &.before::before {
         content: $icon;
+        font-size: inherit;
       }
 
       &.after::after {
         content: $icon;
+        font-size: inherit;
       }
     }
   }

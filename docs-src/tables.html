@@ -114,6 +114,44 @@
 </section>
 
 <section>
+    <h3>Table with sort</h3>
+
+    <div class="example">
+<table class="items striped hoverable sort">
+    <thead>
+        <tr>
+            <th class="icon unsorted after">Name</th>
+            <th class="icon sort-up after">Role </th>
+            <th class="icon sort-down after">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Andrey</td>
+            <td>admin</td>
+            <td><a href="mailto:andrey@aejis.eu">andrey@aejis.eu</a></td>
+        </tr>
+        <tr>
+            <td>Bart</td>
+            <td>user</td>
+            <td><a href="mailto:bart@simpsons.net">bart@simpsons.net</a></td>
+        </tr>
+        <tr>
+            <td>Barak</td>
+            <td>admin</td>
+            <td><a href="mailto:president@whitehouse.gov">president@whitehouse.gov</a></td>
+        </tr>
+        <tr>
+          <td>Lisa</td>
+          <td><a href="mailto:lisa@simpsons.net">lisa@simpsons.net</a></td>
+          <td></td>
+        </tr>
+    </tbody>
+</table>
+    </div>
+</section>
+
+<section>
     <h3>Full table example</h3>
 
     <div class="example">
@@ -124,7 +162,7 @@
         <th>Role</th>
         <th>Email</th>
         <th class="actions">
-          <a href="#" class="button success">Add user</a>
+          <a href="#" class="add button success">Add user</a>
         </th>
       </tr>
     </thead>

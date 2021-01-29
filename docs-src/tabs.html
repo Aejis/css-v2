@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+
+{% block head %}<h2>CSS | Tabs</h2>{% endblock %}
+
+{% block content %}
+<section>
+  <h3>Simple tabs</h3>
+
+  <div class="example">
+<div class="tabs">
+  <nav>
+    <span class="active">first tab</span>
+    <span>second tab</span> 
+    <span>third tab</span>
+  </nav>
+  <div class="active">
+    <table class="items">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Andrey</td>
+            <td>admin</td>
+            <td><a href="mailto:andrey@aejis.eu">andrey@aejis.eu</a></td>
+        </tr>
+        <tr>
+            <td>Bart</td>
+            <td>user</td>
+            <td><a href="mailto:bart@simpsons.net">bart@simpsons.net</a></td>
+        </tr>
+        <tr>
+            <td>Barak</td>
+            <td>admin</td>
+            <td><a href="mailto:president@whitehouse.gov">president@whitehouse.gov</a></td>
+        </tr>
+    </tbody>
+</table>
+  </div>
+  <div>
+    <p>Aenean rhoncus odio vel massa malesuada, ac porta risus convallis.</p>
+  </div>
+  <div>
+    <p>Duis auctor nulla sit amet diam tristique, in varius ante pretium. </p>
+  </div>
+</div>
+  </div>
+
+<script type="text/javascript">
+  
+$(document).ready(function(){
+  $(".tabs nav span").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+2;
+            $(".tabs nav span.active").removeClass("active");
+            $(this).addClass("active");
+            $(".tabs div.active").removeClass("active");
+            $(".tabs div:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+</script>
+</section>
+
+{% endblock %}

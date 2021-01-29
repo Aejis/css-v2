@@ -27,6 +27,27 @@
 </section>
 
 <section>
+    <h3>Input search</h3>
+
+    <div class="example-inline">
+        <div class="example">
+            <div class="search">
+                <input type="search">
+                <button class="icon search after"></button>
+            </div>
+        </div>
+    </div>
+    <div class="example-inline">
+        <div class="example">
+            <div class="search">
+                <input type="search">
+                <button class="search-result-buttonX"></button>
+                <button class="icon search after"></button>
+            </div>
+        </div>
+    </div>
+
+<section>
     <h3>Disabled state</h3>
 
     <div class="example-inline">
@@ -168,15 +189,15 @@
     <h3>Fieldset</h3>
 
     <div class="example">
-<fieldset>
+<fieldset class="block">
     <legend>User details</legend>
     <label>
-        Name<br>
+        Name
         <input type="text" name="user_name">
     </label>
-    <br>
+    
     <label>
-        Email<br>
+        Email
         <input type="text" name="user_email">
     </label>
 </fieldset>
@@ -217,5 +238,4 @@ $ae-input-color-invalid: #db4f4f !default;
   @include input-style(#f200ff);
 }</code></pre>
 </section>
-
 {% endblock %}

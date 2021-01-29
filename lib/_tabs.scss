@@ -1,0 +1,50 @@
+// Tabs
+$ae-tabs-color-normal: $ae-input-color-normal;
+
+.#{$ae-namespace} .tabs{
+
+  nav{
+    padding-left: 0;
+    // list-style: none;
+    display: inline;
+    width: 15%;
+
+    span{
+      color: lighten($ae-color-normal,20%);
+      padding: calc(#{$ae-btn-padding-x} + 3px) calc(#{$ae-btn-padding-y} + 3px);
+      display: inline-block;
+      cursor: pointer;
+      &.active{
+        background-color: lighten($ae-table-color-grey, 5%);
+        cursor: default;
+      }
+    }
+
+    &:first-child span{
+      text-transform: capitalize;
+    }
+
+    span{
+      text-transform: capitalize;
+
+      &.active{
+        color: $ae-color-normal;
+        border-top: 2px solid rgba($ae-color-success,0.5);
+        font-weight: bolder;
+      }
+    }
+  }
+  div{
+    display: none;
+    
+    &.active{
+      display: block;
+      width: 100%;
+      border-top:none;
+      color: lighten($ae-color-normal,20%);
+      font-weight: normal;
+      padding: calc(#{$ae-btn-padding-x} + 3px) calc(#{$ae-btn-padding-y} + 3px);
+      background-color: lighten($ae-table-color-grey, 5%);
+    }
+  }
+}

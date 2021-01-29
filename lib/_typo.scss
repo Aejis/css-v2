@@ -1,12 +1,15 @@
 $base-text-color: #333 !default;
 $selection-color: #c9cfd6 !default;
+$ae-link-coor-active: #196b9b;
+$ae-link-color-active-danger: #a8171d;
 
 $ae-link-color-normal: $ae-color-primary !default;
 $ae-link-color-hover:  $ae-color-success !default;
 $ae-link-color-danger: $ae-color-danger  !default;
 
+
 @mixin font-sans {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-family: "Helvetica Neue", "Acumin Pro", Helvetica, Arial, "Liberation Sans", sans-serif;
 }
 
 @mixin font-serif {
@@ -47,26 +50,46 @@ Base link styles
 */
 a {
   color: $ae-link-color-normal;
+  text-decoration: none;
 
   //&:visited {
   //  color: #3e2bcd;
   //}
 
   &:hover {
-    color: #3da800;
+    // color: #3da800;
+    text-decoration: underline;
     // @include single-transition(color, 0.20s, ease-in-out);
+  }
+  &:active{
+    @extend :hover;
+    color: $ae-link-coor-active;
   }
 
   &.ajax {
-    text-decoration: none;
+    // text-decoration: none;
     border-bottom: 1px dashed;
+    &:hover{
+      text-decoration: none;
+      border-bottom: none;
+    }
+    &:active{
+      @extend :hover;
+      color: $ae-link-coor-active;
+    }
   }
 
   &.danger {
     color: $ae-link-color-danger;
 
     &:hover {
-      color: $base-text-color;
+      border-bottom: 1px dashed;
+      text-decoration: none;
+
+    }
+    &:active{
+      @extend :hover;
+      color: $ae-link-color-active-danger;
     }
   }
 }
